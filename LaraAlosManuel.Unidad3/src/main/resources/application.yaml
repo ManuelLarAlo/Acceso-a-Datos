@@ -5,7 +5,7 @@ spring:
     dirverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/concesionario?createDatabaseIfNotExits=true
     username: root
-    password: 123456Aa-
+    password: toor
   hikari:
     connection-timeout: 60000
     maximum-pool-size: 5

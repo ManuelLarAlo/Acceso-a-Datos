@@ -12,24 +12,25 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "descuentos")
+@Table(name = "cliente")
 public class Descuento {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column
+	private Integer anio;
+	
+	@Column
+	private Double importe;
+	
+	@OneToOne
+	@JoinColumn(name = "cliente_dni")
+	private Cliente cliente;
 
-    @Column(nullable = false)
-    private Integer anio;
-
-    @Column(nullable = false)
-    private Double importe;
-
-    @OneToOne
-    @JoinColumn(name = "cliente_dni", nullable = false)
-    private Cliente cliente;
 }
-

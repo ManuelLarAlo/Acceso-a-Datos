@@ -1,9 +1,6 @@
 package es.aad.LaraAlosManuel.Unidad3.model;
 
-import java.sql.Date;
-
 import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -15,30 +12,26 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 @Table(name = "reparaciones")
 public class Reparacion {
-
+	
 	@EmbeddedId
 	private ReparacionId ReparacionId;
 	
-    @ManyToOne
-    @MapsId("mecanicoDni") 
-    @JoinColumn(name = "mecanico_dni")
-    private Mecanico mecanico;
-	
-    @ManyToOne
-    @MapsId("cocheMatricula") 
-    @JoinColumn(name = "coche_matricula")
-    private Coche coche;
-	
-    @Column(nullable = false)
-	private Date fechaReparación;
-	
     @Column(nullable = false)
 	private String horasArreglo;
-	
-}
+    
+    @ManyToOne
+    @MapsId("mecanicoDni")
+    @JoinColumn(name = "mecanico_dni")
+    private Mecanico mecanico;
+    
+    @ManyToOne
+    @MapsId("clienteDni")
+    @JoinColumn(name = "coche_matricula")
+    private Cliente cliente;
 
+}

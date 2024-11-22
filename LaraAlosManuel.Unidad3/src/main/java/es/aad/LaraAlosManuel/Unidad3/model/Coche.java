@@ -16,23 +16,32 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Coche {
+public class Coche 
+{
 	
-    @Id
-    @Column(nullable = false, unique = true, length = 10)
+	public Coche(Coche coche)
+	{
+		this.matricula = coche.getMatricula();
+		this.modelo = coche.getModelo();
+		this.marca = coche.getMarca();
+		this.color = coche.getColor();
+	}
+	
+	@Id
+	@Column(length = 10)
 	private String matricula;
 	
-    @Column(nullable = false, length = 50)
+	@Column(length = 50)
 	private String modelo;
 	
-    @Column(nullable = false, length = 50)
-    private String marca;
-    
-    @Column(nullable = false, length = 20)
+	@Column(length = 50)
+	private String marca;
+	
+	@Column(length = 20)
 	private String color;
 	
-    @ManyToOne
-    @JoinColumn(name = "cliente_dni", nullable = false)
-    private Cliente cliente;
-	
+	@ManyToOne
+	@JoinColumn(name = "cliente_dni")
+	private Cliente cliente;
+
 }

@@ -10,21 +10,24 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "mecanicos")
-public class Mecanico extends Persona {
+@Table(name = "mecanico")
+public class Mecanico extends Persona{
 	
-	@Column(nullable = false)
+	@Column(length = 100)
 	private Date fechaAlta;
 	
-	@Column(nullable = false)
-	private Double salario;
+	@Column(length = 15)
+	private String salario;
 	
-    @OneToMany(mappedBy = "mecanico")
-    private List<Reparacion> reparaciones = new ArrayList<>();
+	@OneToMany(mappedBy = "mecanico")
+	private List<Reparacion> reparaciones = new ArrayList<>();
+
 }

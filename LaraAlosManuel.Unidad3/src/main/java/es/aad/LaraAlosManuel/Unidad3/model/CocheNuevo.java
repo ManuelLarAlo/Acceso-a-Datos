@@ -5,16 +5,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "coches_nuevos") 
-public class CocheNuevo extends Coche{
+@Table(name = "coche_nuevo")
+public class CocheNuevo extends Coche {
 	
-	@Column(nullable = false)
+	public CocheNuevo(Coche coche)
+	{
+		super(coche);
+	}
+	
+	@Column()
 	private int unidades;
 
 }

@@ -1,7 +1,6 @@
 package es.aad.LaraAlosManuel.Unidad3.model;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import lombok.AllArgsConstructor;
@@ -14,14 +13,14 @@ import lombok.NoArgsConstructor;
 @MappedSuperclass
 public class Persona {
 	
-    @Id
-    @Column(nullable = false, unique = true, length = 10)
+	@Id
+	@Column(length = 8)
 	private String dni;
 	
-    @Column(nullable = false, length = 50)
+	@Column(length = 50)
 	private String nombre;
 	
-    @Column(nullable = false, length = 50)
+	@Column(length = 100)
 	private String apellidos;
 
 }
