@@ -1,0 +1,28 @@
+package es.iesjandula.ejercicio.controller;
+@RestController
+@Service
+public class Controller {
+	
+	@RequestMapping(method = RequestMethod.POST, value="/Universidad/Matriculas/{alumnoId}/{cursoId}/{asignaturaId}")
+	public ResponseEntity<?> crearMatricula(@PathVariable(value="alumnoId") Integer alumnoId,
+											@PathVariable(value="cursoId") Integer cursoId,
+											@PathVariable(value="asignaturaId") Integer asignaturaId) 
+	{
+		try
+		{
+			this.matriculaService.insertarMatricula(alumnoId, asignaturaId, cursoId);
+			return ResponseEntity.ok().build();	
+		}
+		catch (UniversidadException universidadException)
+		{
+			return ResponseEntity.status(400).body(universidadException.getBodyExceptionMessage());
+		}
+		catch (FileNotFoundException fileNotFoundException)
+		{
+			
+		}
+
+		
+	}
+
+}

@@ -1,0 +1,5 @@
+package es.iesjandula.Universidad.utils;
+
+public class UniversidadException {
+
+}

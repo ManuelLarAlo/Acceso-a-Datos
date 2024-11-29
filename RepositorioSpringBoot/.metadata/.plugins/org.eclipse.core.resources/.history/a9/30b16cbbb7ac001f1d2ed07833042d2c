@@ -1,0 +1,15 @@
+package es.iesjandula.BonoLoto.RestController;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import es.iesjandula.BonoLoto.Repositories.SorteosRepository;
+
+@Service
+public class Controller {
+	
+	@Autowired
+	
+	SorteosRepository sorteosRepository;
+
+}

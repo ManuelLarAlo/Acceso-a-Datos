@@ -1,0 +1,5 @@
+package es.iesjandula.BonoLoto.models;
+
+public class Sorteos {
+
+}

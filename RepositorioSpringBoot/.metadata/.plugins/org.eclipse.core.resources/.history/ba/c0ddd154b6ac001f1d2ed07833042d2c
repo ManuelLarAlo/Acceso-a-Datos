@@ -1,0 +1,8 @@
+package es.iesjandula.BonoLoto.RestController;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class Controller {
+
+}

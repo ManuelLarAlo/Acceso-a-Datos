@@ -1,0 +1,5 @@
+package es.iesjandula.BonoLoto.Repositories;
+
+public interface SorteosRepository {
+
+}

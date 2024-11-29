@@ -1,0 +1,6 @@
+package es.iesjandula.BonoLoto.RestController;
+
+@Service
+public class Controller {
+
+}

@@ -1,0 +1,41 @@
+
+|
+java:S4488:"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+|
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+n
+java:S2130Ý"9Use "Integer.parseInt" for this string-to-int conversion.b 38f058f20deb58b5953bd136b9ce2014h
+|
+java:S4488F"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+}
+java:S4488¬"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+o	java:S125l"<This block of commented-out lines of code should be removed.b 0a2edf119abd5d86a8bafe6e1dd9b4c5h
+Z
+java:S1452u"&Remove usage of generic wildcard type.b d1457b72c3fb323a2671125aef3eab5dh
+|
+java:S4488$"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+|
+java:S4488/"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+^
+java:S1940Á")Use the opposite operator ("!=") instead.b 467859e1160e89236452fad12a9c31c2h
+}
+java:S4488·"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+}
+java:S4488”"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+}
+java:S4488†"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+}
+java:S4488¡"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+
+java:S4488Í"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+
+java:S4488Õ"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+n
+java:S2130Ü"9Use "Integer.parseInt" for this string-to-int conversion.b 38f058f20deb58b5953bd136b9ce2014h
+p	java:S125ç"<This block of commented-out lines of code should be removed.b a63192005e00a44cc42b0c0c3e4384d3h
+†
+java:S1128"RRemove this unused import 'org.springframework.web.bind.annotation.RequestHeader'.b 5f598a46e6bc06535814c43a3d19b5cch
+|
+java:S4488t"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"b da96c53f00f8b26f1cc29c20b05f4ee1h
+[
+java:S1452×"&Remove usage of generic wildcard type.b d1457b72c3fb323a2671125aef3eab5dh

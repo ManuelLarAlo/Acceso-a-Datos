@@ -1,0 +1,10 @@
+
+	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b 955d37cdb546f7e11b5927ca88657da7h
+}
+java:S6813"BRemove this field injection and use constructor injection instead.8ΐγλ¶2b 0132ec8cee01c5dd244e1a60fe6448a1h
+a
+java:S1452"&Remove usage of generic wildcard type.8·Ζμ¶2b d1457b72c3fb323a2671125aef3eab5dh
+…
+java:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"8·Ζμ¶2b da96c53f00f8b26f1cc29c20b05f4ee1h
+ƒ
+java:S4488>"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"8ΟΉϋμ¶2b da96c53f00f8b26f1cc29c20b05f4ee1h

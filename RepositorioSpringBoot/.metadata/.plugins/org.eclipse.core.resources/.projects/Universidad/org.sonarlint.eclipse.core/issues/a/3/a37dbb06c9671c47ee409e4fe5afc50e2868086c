@@ -1,0 +1,6 @@
+
+ç	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b 728982299bf1b1e50536a04a34e3b55ah
+w
+java:S2166"CRename this class to remove "Exception" or correct its inheritance.b ae80632073e7ed3916b79338e30be77ch
+î
+java:S2293!"YReplace the type specification in this constructor call with the diamond operator ("<>").8óÜúπ∑2b 7c8e299672aa863431be2dedbd94f7b8h

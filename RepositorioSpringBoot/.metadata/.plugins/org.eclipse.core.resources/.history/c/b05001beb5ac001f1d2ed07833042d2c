@@ -1,0 +1,11 @@
+package es.iesjandula.BonoLoto.models;
+
+import jakarta.persistence.Entity;
+
+@Data
+@Noargs
+@allargs
+@Entity
+public class Sorteos {
+
+}

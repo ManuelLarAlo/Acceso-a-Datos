@@ -1,0 +1,40 @@
+package es.iesjandula.Universidad.Controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+
+@RestController
+@Service
+public class Controller {
+	
+	@RequestMapping(method = RequestMethod.POST, value="/Universidad/Matriculas/{alumnoId}/{cursoId}/{asignaturaId}")
+	public ResponseEntity<?> crearMatricula(@PathVariable(value="a")int a) 
+	{
+		scanner.nextLine();
+		
+		while(scanner.hasNextLine()) {
+			
+			String lineaDelFichero = scanner.nextLine();
+			
+			String[] lineaDelFicheroTroceada= lineaDelFichero.split(",");
+			
+			Peliculas peliculas = new Peliculas();
+			
+			peliculas.setId(Long.valueOf(lineaDelFicheroTroceada[0]));
+			peliculas.setTitulo(lineaDelFicheroTroceada[1]);
+			peliculas.setDuracion(lineaDelFicheroTroceada[2]);
+			
+			this.peliculasRepository.saveAndFlush(peliculas);
+		}
+		return null;
+		
+	}
+
+}

@@ -1,0 +1,6 @@
+
+\	java:S108!")Either remove or fill this block of code.b f95b70fdc3088560732a5ac135644506h
+a
+java:S1452"&Remove usage of generic wildcard type.8ๆบท2b d1457b72c3fb323a2671125aef3eab5dh
+…
+java:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"8ๆบท2b da96c53f00f8b26f1cc29c20b05f4ee1h

@@ -1,0 +1,21 @@
+package es.iesjandula.EjerciciobbddAlumno.models;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+public class Alumno {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	
+	@Column
+	private String nif;
+	
+	@Column
+	private int edad;
+	
+	@Column
+	private String direccion;
+
+}

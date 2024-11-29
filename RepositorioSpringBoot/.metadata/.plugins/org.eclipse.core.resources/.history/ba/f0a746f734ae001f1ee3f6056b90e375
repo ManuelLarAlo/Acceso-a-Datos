@@ -1,0 +1,5 @@
+package es.iesjandula.ejercicio.controller;
+
+public class MatriculaService {
+
+}

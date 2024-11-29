@@ -1,0 +1,19 @@
+package es.iesjandula.BonoLoto.RestController;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import ch.qos.logback.core.joran.spi.HttpUtil.RequestMethod;
+import es.iesjandula.BonoLoto.Repositories.SorteosRepository;
+
+@RestController
+public class Controller {
+	
+	@Autowired
+	SorteosRepository sorteosRepository;
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/premios")
+	public ResponseEntity<?> cargarHistorial (MultiPartFile csvFile) {
+		
+		String stringContent = new String (csvFile.getBytes());
+	}
+}

@@ -1,0 +1,5 @@
+package es.iesjandula.EjerciciobbddAlumno.models;
+
+public class AlumnoResponse {
+
+}

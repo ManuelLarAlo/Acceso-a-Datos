@@ -1,0 +1,10 @@
+
+T
+java:S1165" Make this "message" field final.b 78e731027d8fd50ed642340b7c9a63b3h
+ç	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b b31618a443bea4ad66025d68ed8282dah
+V
+java:S1165""Make this "exception" field final.b 42552b1f133f9f8eb406d4f306ea9fd1h
+ç
+java:S2293'"YReplace the type specification in this constructor call with the diamond operator ("<>").b 7c8e299672aa863431be2dedbd94f7b8h
+Q
+java:S1165"Make this "code" field final.b c13367945d5d4c91047b3b50234aa7abh
