@@ -11,6 +11,6 @@ public class SumaSalariosPorDepartamentoDTO {
 	
     private String nombreDepartamento;
     
-    private Double sumaSalarios;
+    private double sumaSalarios;
 
 }

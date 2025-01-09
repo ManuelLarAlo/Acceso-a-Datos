@@ -26,6 +26,6 @@ public interface UbicacionRepository extends JpaRepository<Ubicacion, Long> {
     @Query("SELECT u FROM Ubicacion u ORDER BY u.ciudad ASC, u.pais.nombrePais ASC")
     List<Ubicacion> findUbicacionesOrdenadasPorCiudadYPais();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.PaisesYCantidadUbicacionesDTO(u.ciudad, COUNT(u)) FROM Ubicacion u GROUP BY u.ciudad HAVING COUNT(u) > 2")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.PaisesYCantidadUbicacionesDTO(u.ciudad, COUNT(u)) FROM Ubicacion u GROUP BY u.ciudad HAVING COUNT(u) > 2")
      List<PaisesYCantidadUbicacionesDTO> findCiudadesConMasDe2Ubicaciones();
 }

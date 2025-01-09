@@ -34,16 +34,16 @@ public interface EmpleadoRepository extends JpaRepository<Empleado, Long> {
     @Query("SELECT e FROM Empleado e JOIN e.departamento d WHERE e.salario > 5000")
     List<Empleado> findEmpleadosConSalarioMayorA5000();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.dto.EmpleadoConGerenteDTO(e.nombre, e.gerente.nombre) FROM Empleado e WHERE e.puesto.tituloPuesto = 'Programador'")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.EmpleadoConGerenteDTO(e.nombre, e.apellido, e.gerente.nombre, e.gerente.apellido) FROM Empleado e WHERE e.puesto.tituloPuesto = 'Programador'")
     List<EmpleadoConGerenteDTO> findEmpleadosYGerentesPorTitulo();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.dto.EmpleadoConDepartamentoDTO(e.nombre, e.apellido, e.salario, e.departamento.nombreDepartamento) FROM Empleado e WHERE e.fechaContrato > '2000-01-01'")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.EmpleadoConDepartamentoSalarioDTO(e.nombre, e.apellido, e.salario, e.departamento.nombreDepartamento) FROM Empleado e WHERE e.fechaContrato > '2000-01-01'")
     List<EmpleadoConDepartamentoDTO> findEmpleadosContratadosDespuesDel2000();
     
     @Query("SELECT e FROM Empleado e WHERE e.gerente IS NULL")
     List<Empleado> findEmpleadosSinGerente();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.dto.EmpleadoConDepartamentoDTO(e.nombre, e.apellido, e.salario, e.departamento.nombreDepartamento) FROM Empleado e WHERE e.comisionPct IS NOT NULL")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.EmpleadoConDepartamentoSalarioDTO(e.nombre, e.apellido, e.salario, e.departamento.nombreDepartamento) FROM Empleado e WHERE e.comisionPct IS NOT NULL")
     List<EmpleadoConDepartamentoDTO> findEmpleadosConComisiones();
     
     @Query("SELECT e FROM Empleado e WHERE e.departamento.nombreDepartamento = 'Ventas' AND e.salario > 7000")
@@ -64,18 +64,18 @@ public interface EmpleadoRepository extends JpaRepository<Empleado, Long> {
     @Query("SELECT e FROM Empleado e WHERE e.gerente IS NULL ORDER BY e.nombre ASC, e.apellido ASC")
     List<Empleado> findEmpleadosSinGerenteOrdenadosAlfabeticamente();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.EmpleadosContratadosPorAnoDTO(EXTRACT(YEAR FROM e.fechaContrato), COUNT(e)) FROM Empleado e GROUP BY EXTRACT(YEAR FROM e.fechaContrato)")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.EmpleadosContratadosPorAnoDTO(EXTRACT(YEAR FROM e.fechaContrato), COUNT(e)) FROM Empleado e GROUP BY EXTRACT(YEAR FROM e.fechaContrato)")
      List<EmpleadosContratadosPorAnoDTO> findCantidadEmpleadosContratadosPorAno();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.EmpleadosPorGerenteDTO(e.gerente.nombre, COUNT(e)) FROM Empleado e WHERE e.gerente IS NOT NULL GROUP BY e.gerente")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.EmpleadosPorGerenteDTO(e.gerente.nombre, COUNT(e)) FROM Empleado e WHERE e.gerente IS NOT NULL GROUP BY e.gerente")
      List<EmpleadosPorGerenteDTO> findEmpleadosAgrupadosPorGerenteYCantidad();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.EmpleadosPorGerenteDTO(e.gerente.nombre, COUNT(e)) FROM Empleado e WHERE e.gerente IS NOT NULL GROUP BY e.gerente HAVING COUNT(e) > 5")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.EmpleadosPorGerenteDTO(e.gerente.nombre, COUNT(e)) FROM Empleado e WHERE e.gerente IS NOT NULL GROUP BY e.gerente HAVING COUNT(e) > 5")
      List<EmpleadosPorGerenteDTO> findGerentesConMasDe5Empleados();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.EmpleadosPorPuestoDTO(e.puesto.tituloPuesto, AVG(e.salario)) FROM Empleado e GROUP BY e.puesto HAVING AVG(e.salario) > 6000")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.EmpleadosPorPuestoDTO(e.puesto.tituloPuesto, AVG(e.salario)) FROM Empleado e GROUP BY e.puesto HAVING AVG(e.salario) > 6000")
      List<EmpleadosPorPuestoDTO> findEmpleadosAgrupadosPorPuestoConSalarioPromedioMayorA6000();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.SalarioPromedioPorDepartamentoDTO(d.nombreDepartamento, AVG(e.salario)) FROM Departamento d LEFT JOIN d.historialPuestos hp LEFT JOIN hp.empleado e GROUP BY d.nombreDepartamento HAVING AVG(e.salario) > 9000")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.SalarioPromedioPorDepartamentoDTO(d.nombreDepartamento, AVG(e.salario)) FROM Departamento d LEFT JOIN d.historialPuestos hp LEFT JOIN hp.empleado e GROUP BY d.nombreDepartamento HAVING AVG(e.salario) > 9000")
      List<SalarioPromedioPorDepartamentoDTO> findDepartamentosConSalarioPromedioMayorA9000();
 }

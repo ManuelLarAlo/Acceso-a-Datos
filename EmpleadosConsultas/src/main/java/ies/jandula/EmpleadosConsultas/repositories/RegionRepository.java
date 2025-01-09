@@ -19,9 +19,9 @@ public interface RegionRepository extends JpaRepository<Region, Long> {
     @Query("SELECT r FROM Region r LEFT JOIN r.paises p GROUP BY r ORDER BY COUNT(p) DESC")
     List<Region> findRegionesOrdenadasPorCantidadPaises();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.RegionesYCantidadPaisesDTO(r.nombreRegion, COUNT(p)) FROM Region r LEFT JOIN r.paises p GROUP BY r.nombreRegion")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.RegionesYCantidadPaisesDTO(r.nombreRegion, COUNT(p)) FROM Region r LEFT JOIN r.paises p GROUP BY r.nombreRegion")
      List<RegionesYCantidadPaisesDTO> findRegionesYCantidadPaises();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.RegionesYCantidadPaisesDTO(r.nombreRegion, COUNT(p)) FROM Region r LEFT JOIN r.paises p GROUP BY r.nombreRegion HAVING COUNT(p) > 3")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.RegionesYCantidadPaisesDTO(r.nombreRegion, COUNT(p)) FROM Region r LEFT JOIN r.paises p GROUP BY r.nombreRegion HAVING COUNT(p) > 3")
      List<RegionesYCantidadPaisesDTO> findRegionesConMasDe3Paises();
 }

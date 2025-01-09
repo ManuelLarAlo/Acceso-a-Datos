@@ -22,12 +22,12 @@ public interface PaisRepository extends JpaRepository<Pais, String> {
     @Query("SELECT p FROM Pais p ORDER BY p.region.nombreRegion ASC")
     List<Pais> findPaisesOrdenadosPorRegion();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.PaisesYCantidadUbicacionesDTO(p.nombrePais, COUNT(u)) FROM Pais p LEFT JOIN p.ubicaciones u GROUP BY p.nombrePais")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.PaisesYCantidadUbicacionesDTO(p.nombrePais, COUNT(u)) FROM Pais p LEFT JOIN p.ubicaciones u GROUP BY p.nombrePais")
      List<PaisesYCantidadUbicacionesDTO> findPaisesYCantidadDeUbicaciones();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.PaisesYCantidadUbicacionesDTO(p.nombrePais, COUNT(u)) FROM Pais p LEFT JOIN p.ubicaciones u GROUP BY p.nombrePais HAVING COUNT(u) > 2")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.PaisesYCantidadUbicacionesDTO(p.nombrePais, COUNT(u)) FROM Pais p LEFT JOIN p.ubicaciones u GROUP BY p.nombrePais HAVING COUNT(u) > 2")
      List<PaisesYCantidadUbicacionesDTO> findPaisesConMasDe2Ubicaciones();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.PaisesYCantidadUbicacionesDTO(p.nombrePais, COUNT(e)) FROM Pais p LEFT JOIN p.ubicaciones u LEFT JOIN u.empleados e GROUP BY p.nombrePais HAVING COUNT(e) > 3")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.PaisesYCantidadUbicacionesDTO(p.nombrePais, COUNT(e)) FROM Pais p LEFT JOIN p.ubicaciones u LEFT JOIN u.empleados e GROUP BY p.nombrePais HAVING COUNT(e) > 3")
      List<PaisesYCantidadUbicacionesDTO> findPaisesConMasDe3Empleados();
 }

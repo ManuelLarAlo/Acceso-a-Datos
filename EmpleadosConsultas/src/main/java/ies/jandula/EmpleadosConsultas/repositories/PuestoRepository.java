@@ -18,9 +18,9 @@ public interface PuestoRepository extends JpaRepository<Puesto, String> {
     @Query("SELECT p FROM Puesto p ORDER BY p.salarioMax DESC")
     List<Puesto> findPuestosOrdenadosPorSalarioMaximo();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.EmpleadosPorPuestoDTO(p.tituloPuesto, COUNT(e)) FROM Puesto p LEFT JOIN p.empleados e GROUP BY p.tituloPuesto")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.EmpleadosPorPuestoDTO(p.tituloPuesto, COUNT(e)) FROM Puesto p LEFT JOIN p.empleados e GROUP BY p.tituloPuesto")
      List<EmpleadosPorPuestoDTO> findCantidadEmpleadosPorPuesto();
     
-    @Query("SELECT new ies.jandula.EmpleadosConsultas.models.EmpleadosPorPuestoDTO(p.tituloPuesto, COUNT(e)) FROM Puesto p LEFT JOIN p.empleados e WHERE p.salarioMin > 4000 GROUP BY p.tituloPuesto")
+    @Query("SELECT new ies.jandula.EmpleadosConsultas.dtos.EmpleadosPorPuestoDTO(p.tituloPuesto, COUNT(e)) FROM Puesto p LEFT JOIN p.empleados e WHERE p.salarioMin > 4000 GROUP BY p.tituloPuesto")
      List<EmpleadosPorPuestoDTO> findPuestosConSalarioMinimoMayorA4000YEmpleados();
 }

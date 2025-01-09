@@ -11,6 +11,6 @@ public class SalarioPromedioPorDepartamentoDTO {
 	
     private String nombreDepartamento;
     
-    private Double salarioPromedio;
+    private double salarioPromedio;
 
 }
